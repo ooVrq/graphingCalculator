@@ -24,7 +24,7 @@ void graphingCalculator::drawFunction()
 
     for(float x = -10; x <= 10; x += 0.01)
     {
-        float y = x * x;
+        float y = x * x; //Update to parse input
         points.emplace_back(sf::Vertex(sf::Vector2f(x * 40 + 400, -y * 40 + 300), sf::Color::Magenta));
     }
 }
