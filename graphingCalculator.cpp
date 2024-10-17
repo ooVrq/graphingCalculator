@@ -96,11 +96,50 @@ void graphingCalculator::handleTextInput(sf::Uint32 unicode)
 
 float graphingCalculator::parseInput(float x)
 {
-    string expression = input;
-    if(expression == "x")
+    if(input[0] == 'x')
     {
-        return x;
+        if(input.size() > 1)
+        {
+            if(input[1] == '+')
+            {
+                return x + (input[2] - '0');
+            }
+            else if(input[1] == '-')
+            {
+                return x - (input[2] - '0');
+            }
+            else if(input[1] == '^')
+            {
+                return pow(x, input[2] - '0');
+            }
+        }
+        else
+            return x;
     }
-    else if(expression[0] - '0' < 10)
+    else if(input[0] - '0' < 10)
         return input[0] - '0';
+    else if(input == "sinx" || input == "sin(x)")
+    {
+        return sin(x);
+    }
+    else if(input == "cosx" || input == "cos(x)")
+    {
+        return cos(x);
+    }
+    else if(input == "tanx" || input == "tan(x)")
+    {
+        return tan(x);
+    }
+    else if(input == "sqrtx" || input == "sqrt(x)")
+    {
+        return sqrt(x);
+    }
+    else if(input == "e^x")
+    {
+        return exp(x);
+    }
+    else if(input == "abs(e^x)");
+    {
+        return(abs(exp(x)));
+    }
 }

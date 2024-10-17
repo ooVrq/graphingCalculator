@@ -21,14 +21,6 @@ int main()
             {
                 calculator.handleTextInput(event.text.unicode);
             }
-
-            // if(event.type == sf::Event::KeyPressed)
-            // {
-            //     if(event.key.code == sf::Keyboard::Enter)
-            //     {
-            //         calculator.setFunction("input");
-            //     }
-            // }
         }
         window.clear();
         calculator.draw(window);
